@@ -43,7 +43,7 @@ namespace Thrift.Transport.Client
             Host = host;
             Port = port;
 
-            TcpClient = new TcpClient();
+            TcpClient = new TcpClient(host, port);
             TcpClient.ReceiveTimeout = TcpClient.SendTimeout = timeout;
             TcpClient.Client.NoDelay = true;
             SetInputOutputStream();
